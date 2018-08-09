@@ -1,0 +1,604 @@
+html{
+    font-size: 100px;
+    background-size:100% 100%;
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    -webkit-text-size-adjust:none;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;
+    font-family: MicrosoftYaHei;
+}
+
+body::-webkit-scrollbar {display:none}
+.main-video-module .video-module-ul::-webkit-scrollbar {display:none}
+
+.tk-demo-theme {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+}
+
+.tk-demo-theme .main-header{
+    height: 0.42rem;
+    width: 100%;
+    background-color: #2E2E30;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #A0A0A0;
+    font-size: 0.14rem;
+}
+.tk-demo-theme .main-header .start-transcribe{
+    position: absolute;
+    right: 3.2rem;
+    height: 0.42rem;
+    width: 1.5rem;
+    cursor: pointer;
+}
+.tk-demo-theme .main-header .start-transcribe .icon{
+    position: absolute;
+    left:0;
+    top:50%;
+    margin-top: -0.1rem;
+    width: 0.2rem;
+    height: 0.2rem;
+    background: url("../img/icon_star.png") no-repeat center;
+    background-size: 0.2rem 0.2rem;
+}
+.tk-demo-theme .main-header .start-transcribe .text{
+    position: absolute;
+    right:0;
+    width: 1.3rem;
+    height: 0.42rem;
+    padding-left: 0.12rem ;
+    line-height: 0.42rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.tk-demo-theme .main-header .switch-onlyaudio{
+    position: absolute;
+    right: 1.26rem;
+    height: 0.42rem;
+    width: 1.5rem;
+    cursor: pointer;
+}
+.tk-demo-theme .main-header .switch-onlyaudio .icon{
+    position: absolute;
+    left:0;
+    top:50%;
+    margin-top: -0.1rem;
+    width: 0.2rem;
+    height: 0.2rem;
+    background: url("../img/icon_change.png") no-repeat center;
+    background-size: 0.2rem 0.2rem;
+}
+
+.tk-demo-theme .main-header .switch-onlyaudio .text{
+    position: absolute;
+    right:0;
+    width: 1.3rem;
+    height: 0.42rem;
+    padding-left: 0.12rem ;
+    line-height: 0.42rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.tk-demo-theme .main-header .setting{
+    position: absolute;
+    right: 0.1rem;
+    height: 0.42rem;
+    width: 0.8rem;
+    cursor: pointer;
+}
+.tk-demo-theme .main-header .setting .icon{
+    position: absolute;
+    left:0;
+    top:50%;
+    margin-top: -0.1rem;
+    width: 0.2rem;
+    height: 0.2rem;
+    background: url("../img/icon_set.png") no-repeat center;
+    background-size: 0.2rem 0.2rem;
+}
+.tk-demo-theme .main-header .setting .text{
+    position: absolute;
+    right:0;
+    width: 0.6rem;
+    height: 0.42rem;
+    padding-left: 0.12rem ;
+    line-height: 0.42rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.tk-demo-theme .main-video-module{
+    width: calc(100% -  5.36rem );
+    height: calc(100% -  0.42rem );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color:#121213;
+    overflow: hidden;
+}
+.main-video-module .video-module-ul{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+}
+.main-video-module .video-module-ul li{
+    list-style: none;
+    height: 3.4rem;
+    flex: 0 0 33.3333%;
+    box-sizing: border-box;
+    border: 0.02rem solid #121213;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-video-module .video-module-ul li .SwitchBox{
+    position: absolute;
+    z-index: 999;
+    width: 1.55rem;
+    font-size: 0.14rem;
+    color: #F3F4FF;
+    right: 0.45rem;
+    top:1.2rem;
+    display: none;
+}
+.main-video-module .video-module-ul li .SwitchBox div{
+    width: 100%;
+    height: 0.32rem;
+    line-height: 0.32rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(50,50,50,0.72);
+}
+.main-video-module .video-module-ul li .SwitchBox div.active{
+    background-color: rgba(0,119,255,0.72);
+}
+.main-video-module .video-module-ul li .videoBlock{
+    width: 100%;
+    height: 100%;
+    background:url("../img/videobackground.png") no-repeat center;
+    background-size: 100% 100%;
+    position: absolute;
+}
+.main-video-module .video-module-ul li .videoBlock .iconBlock{
+    position: absolute;
+    width: 0.28rem;
+    height: 1.4rem;
+    right: 0.1rem;
+    top: 0.24rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 260;
+}
+.main-video-module .video-module-ul li .videoBlock .iconBlock .btn{
+    flex: 1;
+    width: 0.28rem;
+}
+.main-video-module .video-module-ul li .videoBlock .iconBlock .btn div{
+    height: 0.28rem;
+    cursor: pointer;
+}
+
+.main-video-module .video-module-ul li .videoBlock .iconBlock .btn-video{
+    background: url("../img/button_closevideo.png") no-repeat center;
+    background-size: 0.28rem 0.28rem;
+}
+.main-video-module .video-module-ul li .videoBlock .iconBlock .btn.permissionOpen .btn-video{
+    background: url("../img/button_openvideo.png") no-repeat center;
+    background-size: 0.28rem 0.28rem;
+}
+.main-video-module .video-module-ul li .videoBlock .iconBlock .btn-audio{
+    background: url("../img/button_openaudio_default.png") no-repeat center;
+    background-size: 0.28rem 0.28rem;
+}
+.main-video-module .video-module-ul li .videoBlock .iconBlock .disabled{
+    pointer-events:none;
+    opacity: 0.16;
+    cursor: unset;
+}
+.main-video-module .video-module-ul li .videoBlock .iconBlock .btn.permissionOpen .btn-audio{
+    background: url("../img/button_openaudio.png") no-repeat center;
+    background-size: 0.28rem 0.28rem;
+}
+.main-video-module .video-module-ul li .videoBlock .iconBlock .btn-pps{
+    background: url("../img/button_resolution.png") no-repeat center;
+    background-size: 0.28rem 0.28rem;
+}
+.main-video-module .video-module-ul li .videoBlock .iconBlock .btn-tick{
+    background: url("../img/button_remov.png") no-repeat center;
+    background-size: 0.28rem 0.28rem;
+}
+.main-video-module .video-module-ul li .videoBlock .infoBlock{
+    height: 0.26rem;
+    position: absolute;
+    color:#F3F4FF;
+    font-size: 0.14rem;
+    width: 100%;
+    z-index: 260;
+    bottom: 0;
+    background: rgba(0,0,0,0.1);
+}
+.main-video-module .video-module-ul li .videoBlock .infoBlock span:first-child{
+    float: left;
+    margin-left: 0.1rem;
+    line-height: 0.26rem;
+    max-width: 50%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.main-video-module .video-module-ul li .videoBlock .infoBlock span:last-child{
+    float: right;
+    margin-right: 0.2rem;
+    line-height: 0.26rem;
+    max-width: 50%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+
+.tk-demo-theme .main-chat-module{
+    width: 5.36rem;
+    height: calc(100% -  0.42rem - 0.01rem);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #2E2E30;
+    overflow: hidden;
+}
+
+.tk-demo-theme .main-chat-module .chat-module-ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: calc(100% - 0.5rem);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.tk-demo-theme .main-chat-module .chat-module-ul::-webkit-scrollbar  { /*滚动条整体部分，其中的属性有width,height,background,border（就和一个块级元素一样）等。*/
+    width: 0.05rem;
+    background: #414141;
+}
+.tk-demo-theme .main-chat-module .chat-module-ul::-webkit-scrollbar-thumb  { /* 滚动条里面可以拖动的那部分*/
+     border-radius: 0.5rem;
+     background: #646464;
+     max-height: 0.3rem;
+ }
+.tk-demo-theme .main-chat-module .chat-module-ul::-webkit-scrollbar-corner {/*边角*/
+      background: #646464;
+  }
+.tk-demo-theme .main-chat-module .chat-module-ul li{
+    margin-left: 0.12rem;
+    margin-right: 0.12rem;
+    list-style: none;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+}
+.tk-demo-theme .main-chat-module .chat-module-ul li:first-child{
+    margin-top: 0.3rem;
+}
+.tk-demo-theme .main-chat-module .chat-module-ul .chat-list div:first-child{
+    float: left;
+    height: 0.35rem;
+    width: 0.35rem;
+    background:url("../img/users.png") no-repeat center;
+    background-size: 0.35rem 0.35rem;
+    border-radius: 50%;
+}
+.tk-demo-theme .main-chat-module .chat-module-ul .chat-list div:last-child{
+    float: left;
+    max-width: calc(100% - 1rem);
+    background: #444444;
+    color: #FFFFFF;
+    border-radius: 0 0.07rem 0.07rem 0.07rem;
+    font-size: 0.14rem;
+    line-height: 0.32rem;
+    margin-top: 0.015rem;
+    margin-left: 0.036rem;
+    padding-left: 0.11rem;
+    padding-right: 0.11rem;
+}
+
+.tk-demo-theme .main-chat-module .chat-module-ul .chat-list.isme div:first-child{
+    float: right;
+}
+.tk-demo-theme .main-chat-module .chat-module-ul .chat-list.isme div:last-child{
+    float: right;
+    background: #0077FF;
+    color: #FFFFFF;
+    margin-left: 0;
+    margin-right: 0.036rem;
+    border-radius: 0.07rem 0 0.07rem 0.07rem;
+}
+
+.tk-demo-theme .main-chat-module .chat-module-ul li:after{
+    content:"";
+    display:block;
+    clear:both;
+    height: 0;
+}
+
+
+.tk-demo-theme .main-chat-module .send-chat{
+    position: relative;
+    width: 100%;
+    height: 0.5rem;
+    border-top: 0.01rem solid rgba(65,65,65,1);
+    box-sizing: border-box;
+}
+.tk-demo-theme .main-chat-module .send-chat input{
+    position: absolute;
+    width: 4.11rem;
+    height: 0.34rem;
+    border-radius: 0.05rem;
+    border-style: none;
+    top: 50%;
+    left: 0.08rem;
+    margin-top: -0.17rem;
+    padding-left: 0.12rem;
+}
+
+.tk-demo-theme .main-chat-module .sended{
+    width: 0.75rem;
+    height: 0.34rem;
+    position: absolute;
+    background: #0077FF;
+    top: 50%;
+    margin-top: -0.17rem;
+    right: 0.2rem;
+    text-align: center;
+    line-height: 0.34rem;
+    font-size: 0.14rem;
+    color: #FFFFFF;
+    border-radius: 0.05rem;
+}
+.tk-demo-theme .main-chat-module .sended:hover{
+    background: #006bd6;
+}
+
+/* LOGIN UI */
+.login{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 999;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+}
+.login .loginbg{
+    background: url("../img/background.png") no-repeat center;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 4.64rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -3.6rem;
+}
+.login .logininput{
+    width: 4.2rem;
+    height: 4.6rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -2.3rem;
+    left: 50%;
+    margin-left: -2.1rem;
+    background-color: #FFFFFF;
+    border-radius: 0.08rem;
+    box-shadow: 0.01rem 0.02rem 0.06rem lightgrey;
+}
+.login .logininput .container{
+    position: absolute;
+    width: 100%;
+    height: 3.2rem;
+    padding-top: 0.2rem;
+}
+.login .logininput .container div{
+    position: relative;
+    width: 100%;
+    height: 0.8rem;
+}
+.login .logininput .container input{
+    position: absolute;
+    width: 3.53rem;
+    height: 0.4rem;
+    top: 50%;
+    left: 50%;
+    margin-left:-1.765rem;
+    margin-top: -0.2rem;
+    border-radius: 0.3rem;
+    outline: none;
+    border: 0.01rem solid #DDDDDD;
+    padding-left: 0.1rem;
+    color: #5B5B61;
+}
+
+.login .loginbtn{
+    width: 3.52rem;
+    height: 0.4rem;
+    position: absolute;
+    bottom: 0.63rem;
+    background-color: #0077FF;
+    color: #ffffff;
+    left: 50%;
+    margin-left: -1.76rem;
+    border:0;
+    outline: none;
+    border-radius: 0.05rem;
+    display: none;
+}
+
+.login .loginbtn:hover{
+    background-color: #005fcc;
+}
+
+.logininfo{
+    width: 100%;
+    height: 0.3rem;
+    font-size: 0.14rem;
+    color:#808083;
+    position: absolute;
+    top: 50%;
+    margin-top: 2.75rem;
+    text-align: center;
+}
+.logininfo a{
+    text-decoration:none;
+    color:#0077FF;
+    -webkit-user-select:text; -moz-user-select:text; -ms-user-select:text; user-select:text;
+}
+.logininfo a:hover{
+    text-decoration:underline;
+}
+
+/*设备检测区域*/
+.deviceDetectionBox {
+    font-size: 0.14rem;
+    display: none;
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+}
+
+.Detectionmain {
+    background: #484849;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 7.54rem;
+    height: 5.92rem;
+    overflow: hidden;
+    padding-left: 0.25rem;
+    color: #FFFFFF;
+}
+
+.Detectionmain .close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:#212123;
+    height: 0.42rem;
+    line-height: 0.42rem;
+    text-align: center;
+    font-size: 0.16rem;
+}
+
+.Detectionmain .close .stopDevicesTestBox{
+    width: 0.22rem;
+    height: 0.22rem;
+    line-height: 0.22rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.11rem;
+    right: 0.1rem;
+    color: #fff;
+    font-size: 0.18rem;
+    cursor: pointer;
+}
+
+
+.Detectionmain  .finishDevicesTestBox{
+    width: 1.25rem;
+    height: 0.4rem;
+    background-color: #3277F6;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.14rem;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0.26rem;
+    right: 0.25rem;
+    border-radius: 0.06rem;
+    cursor: pointer;
+}
+.Detectionmain  .finishDevicesTestBox:hover{
+    background-color: #2a73d7;
+}
+.Detectionmain .lableS{
+    width: calc(100% - 0.25rem);
+    height: 5.5rem;
+    position: absolute;
+    bottom: 0;
+    padding-top: 0.2rem;
+}
+
+.Detectionmain select{
+    width: 5.94rem;
+    height: 0.38rem;
+    border-radius: 0.06rem;
+    margin: 0.1rem;
+    color: #212123;
+}
+.Detectionmain #selectVideoInputDevices{
+    margin-top: 0.36rem;
+}
+.Detectionmain .deviceDetectionVideoPlayerContainer{
+    width: 1.71rem;
+    height: 1.22rem;
+    position: absolute;
+    bottom: 2.09rem;
+    left: 1.77rem;
+}
+
+.Detectionmain .testAudiooutput{
+    position: absolute;
+    bottom: 1.35rem;
+    left:0.41rem ;
+    height: 0.32rem;
+}
+.Detectionmain .testAudiooutput .testAudiooutputText{
+    display: inline-block;
+    height: 0.32rem;
+    float: left;
+    line-height: 0.32rem;
+}
+.Detectionmain .testAudiooutput audio{
+    display: inline-block;
+    height: 100%;
+    float: left;
+}
+.Detectionmain .testTestspeaker{
+    position: absolute;
+    bottom: 0.8rem;
+    left:0.26rem;
+}
+.Detectionmain .videoprofile{
+    position: absolute;
+    left: 0.55rem;
+    bottom: 3.16rem;
+}
+
+
+

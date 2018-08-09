@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TK-SDKdemo</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<div class="tk-demo-theme">
+    <!--登录界面-->
+    <div id="login" class="login">
+        <div class="loginbg"></div>
+        <div class="logininput">
+            <div class="container">
+                <div><input id="ihost" type="text" placeholder="   URL" value="global.talk-cloud.net"></div>
+                <div><input id="iserial" type="text" placeholder="   RoomId" value="" ></div>
+                <div><input id="ipassword" type="text" placeholder="   Password" value="" ></div>
+                <div><input id="inick" type="text" placeholder="   NiceName" value="" ></div>
+            </div>
+            <button id="loginbtn" class="loginbtn">进入教室</button>
+        </div>
+        <div class="logininfo">请登录企业管理系统（<a href="http://global.talk-cloud.net/User/login.html">http://global.talk-cloud.net/User/login.html</a>）创建房间，将房间号及密码填入相应输入框后加入房间</div>
+    </div>
+    <!--头部区域-->
+    <div class="main-header">
+        <div class="start-transcribe" id="start-transcribe" title="服务器录制"><div class="icon"></div><div id="start-transcribe-text" class="text">开始服务器录制</div></div>
+        <div class="switch-onlyaudio" id="switch-onlyaudio" title="切换房间模式">
+            <div class="icon"></div>
+            <div id="switch-onlyaudio-text" class="text">切换为纯音频教室</div>
+        </div>
+        <div id="setting" class="setting" title="设置"><div class="icon"></div><div class="text">设置</div></div>
+    </div>
+    <!--视频区域-->
+    <div class="main-video-module">
+        <ul id="videoContainer" class="video-module-ul">
+
+        </ul>
+    </div>
+    <!--聊天区域-->
+    <div  class="main-chat-module">
+        <ul id="chatContainer" class="chat-module-ul">
+
+        </ul>
+        <div class="send-chat">
+            <input id="textSource" type="text" placeholder="  按回车键发送您的消息" style="outline:none;">
+            <div id="sendText" class="sended">发送</div>
+        </div>
+    </div>
+    <!--设备检测区域-->
+    <div id="deviceDetectionBox" class="deviceDetectionBox" >
+        <div class="Detectionmain">
+            <div class="lableS">
+                <lable>视频输入设备：</lable><select  id="selectVideoInputDevices"  ></select><br />
+                <lable>音频输入设备：</lable><select  id="selectAudioInputDevices"  ></select><br />
+                <lable>音频输出设备：</lable><select  id="selectAudioOutputDevices"   ></select><br />
+                <div class="videoprofile" ><input type="checkbox" id="videoprofile"  value=""/>镜像</div>
+
+                    <div class="deviceDetectionVideoPlayerContainer" id="deviceDetectionVideoPlayerContainer" ></div>
+                    <div id="deviceDetectionAudioPlayerContainer" style="display: none;" ></div>
+                <div class="testAudiooutput"><div class="testAudiooutputText">测试扬声器：</div><audio id="deviceDetectionAudiooutput" src="./media/detectionDevice_default.wav"  controls ></audio></div>
+                    <div class="testTestspeaker">
+                        当前设备说话的音量(0-100)：<span id="deviceDetectionAudioPlayerVolume"  >0</span>
+                    </div>
+            </div>
+            <div class="finishDevicesTestBox" id="finishDevicesTestBox" >切换选中设备</div>
+            <div class="close">
+                设置
+                <div class="stopDevicesTestBox" id="stopDevicesTestBox" >×</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../sdk/jquery.min.js"></script>
+<script src="../sdk/tksdk.js" language="JavaScript"></script>
+<script src="js/createDom.js" language="JavaScript"></script>
+<script src="js/controller.js" language="JavaScript"></script>
+<script src="js/chat.js" language="JavaScript"></script>
+<script src="js/equipment.js" language="JavaScript"></script>
